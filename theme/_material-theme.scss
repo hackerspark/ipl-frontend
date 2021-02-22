@@ -1,0 +1,11 @@
+// TODO: Fix warnings because of body padding, background-color
+body {
+    padding: 0;
+}
+.theme--light {
+    --theme-surface: #f5f5f5;
+}
+
+.w-40px {
+    width: 40px;
+}
