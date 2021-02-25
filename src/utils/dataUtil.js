@@ -10,4 +10,14 @@ async function getPlayer(id) {
   return players.find(player => player.id === id);
 }
 
-export default { getPlayers, getPlayer };
+async function getTeams() {
+  let res = await fetch(`${SERVER_ROOT}/teams`);
+  return await res.json();
+}
+
+async function isBiddingOn() {
+  let res = await fetch(`${SERVER_ROOT}/isBiddingOn`);
+  return (await res.json()).status;
+}
+
+export default { getPlayers, getPlayer, getTeams };

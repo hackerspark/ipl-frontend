@@ -1,5 +1,5 @@
-import {playerLabels} from '../lookups/playerMapping';
+import {playerKeyLabelMapping} from '../lookups/playerMapping';
 
-export function processPlayerKey(key) {
-    return playerLabels[key];
+export function keyToLabel(key) {
+    return playerKeyLabelMapping[key];
 }

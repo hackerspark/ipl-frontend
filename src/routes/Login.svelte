@@ -27,7 +27,7 @@
     }));
     
     if(type === 'USER') {
-      replace('/room');
+      replace('/');
     } else {
       replace('/controlPanel');
     }

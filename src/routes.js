@@ -6,6 +6,7 @@ import Home from './routes/Home.svelte';
 import Login from './routes/Login.svelte';
 import Room from './routes/Room.svelte';
 import ControlPanel from './routes/ControlPanel.svelte';
+import Teams from './routes/Teams.svelte';
 import NotFound from './routes/NotFound.svelte';
 
 import {userStore} from './stores/user';
@@ -33,6 +34,10 @@ export default {
         return false;
       }
     ]
+  }),
+  '/teams': wrap({
+    component: Teams,
+    conditions: [() => get(userStore).type === 'ADMIN'],
   }),
   '*': NotFound,
 };
