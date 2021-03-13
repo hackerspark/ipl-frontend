@@ -1,4 +1,7 @@
 <script>
+  import { onDestroy } from 'svelte';
+  import  bidplayeridstore  from '../stores/bidplayer';
+
   import { Datatable, rows } from 'svelte-simple-datatables';
   import { Button } from 'svelte-materialify/src';
 
@@ -17,6 +20,21 @@
 
   function startBid(bid) {
       console.log(bid);
+      console.log(bid.id);
+      currentbidsrecords.set([])
+      
+      bidplayeridstore.sendMessage(JSON.stringify({
+                       bid
+                      }));
+  }
+
+
+  function stopBid(bid) {
+    console.log("Stopping the bid")
+
+    bidplayeridstore.sendMessage(JSON.stringify({
+                       "reset":true
+                      }));
   }
 
 </script>

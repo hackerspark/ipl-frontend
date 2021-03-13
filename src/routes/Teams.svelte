@@ -12,7 +12,7 @@
   const settings = {
       sortable: false,
       pagination: false,
-      columnFilter: false,
+      columnFilter: false
   };
 
 </script>
